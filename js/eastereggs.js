@@ -37,7 +37,7 @@ function createSecretPopup(message){
 
 document.addEventListener("keydown", (e) => {
 
-  if(e.key.toLowerCase() === "h"){
+  if(e.key.toLowerCase() === "t"){
 
     createSecretPopup(
       "❤️ Hidden Message: You make even ordinary days feel special."
