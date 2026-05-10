@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Caveat:wght@400;700&display=swap');
+
+:root{
+  --bg:#fff8f5;
+  --pink:#ffd6e7;
+  --lavender:#e5dcff;
+  --cream:#fffdf8;
+  --text:#4a4453;
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Quicksand',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.hidden{
+   display: none !important;
+}
+
+section{
+  padding:80px 10%;
+}
+
+.hero{
+  height:100vh;
+  position:relative;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  overflow:hidden;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("../assets/images/backgroud.jpg");
+
+  background-size:cover;
+  background-position:center;
+
+  background-attachment:fixed;
+}
+
+.hero-content h1{
+  font-size:5rem;
+  font-family:'Caveat',cursive;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+  text-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+
+.hero-content h1{
+  font-size:5rem;
+  font-family:'Caveat',cursive;
+}
+
+.subtitle{
+  font-size:1.2rem;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  margin-bottom:20px;
+  font-size:1.1rem;
+  letter-spacing:2px;
+}
+
+button{
+  border:none;
+  padding:14px 24px;
+  border-radius:40px;
+  cursor:pointer;
+  background:white;
+  box-shadow:var(--shadow);
+  transition:.3s;
+  font-size:1rem;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+.card-grid,
+.memory-grid,
+.gallery-grid,
+.game-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+  margin-top:40px;
+}
+
+.question-card,
+.memory-card,
+.game-card,
+.polaroid{
+  background:white;
+  padding:20px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+
+.polaroid img{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:10px;
+}
+
+.section-title{
+  text-align:center;
+}
+
+.section-title h2{
+  font-size:2.5rem;
+  font-family:'Caveat',cursive;
+}
+
+.timeline-container{
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.timeline-item{
+  background:white;
+  padding:20px;
+  border-left:5px solid pink;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.letter-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+}
+
+.final-section{
+  min-height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+   display: none;
+}
+
+.progress-bar{
+  width:250px;
+  height:10px;
+  background:#ffffff55;
+  border-radius:30px;
+  overflow:hidden;
+  margin:auto;
+  margin-top:20px;
+}
+
+.progress-bar span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:white;
+  animation:loading 3s forwards;
+}
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ffdce8,#f7ecff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.loader-content{
+  text-align:center;
+}
+
+#musicToggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:100;
+}
+
+.floating-container{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+
+#heartGameArea{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+#heartGameArea span{
+  font-size:2rem;
+  cursor:pointer;
+  transition:.3s;
+}
+
+#heartGameArea span:hover{
+  transform:scale(1.2);
+}
+
+#memoryGame{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+#memoryGame button{
+  font-size:1.5rem;
+  height:70px;
+}
+
+#puzzleReward{
+  margin-top:20px;
+  font-size:1.1rem;
+  font-weight:bold;
+}
+
+.reward-box{
+
+  margin-top:40px;
+  background:white;
+  padding:25px;
+  border-radius:24px;
+  text-align:center;
+  box-shadow:var(--shadow);
+
+  animation:fadeReward .5s ease;
+}
+
+.reward-box img{
+
+  width:100%;
+  max-width:300px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.reward-box h3{
+
+  font-family:'Caveat',cursive;
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+@keyframes fadeReward{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+.reward-box img{
+  display:block;
+  width:100%;
+  max-width:320px;
+  margin:0 auto 20px auto;
+  border-radius:20px;
+  object-fit:cover;
+}
+
+.memory-image{
+
+  width:220px;
+  max-width:100%;
+
+  display:block;
+  margin:0 auto 15px auto;
+
+  border-radius:16px;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.12);
+
+  transition:.3s;
+   transform:
+  rotate(0deg)
+  scale(1.02);
+}
+
+.memory-card{
+
+  text-align:center;
+
+  padding:20px;
+
+  background:white;
+
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+   transform:rotate(-1deg);
+
+}
+
+.dates-grid,
+.ghibli-grid{
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:24px;
+  margin-top:40px;
+}
+
+.date-card,
+.ghibli-card{
+
+  background:white;
+  padding:20px;
+  border-radius:24px;
+
+  text-align:center;
+
+  box-shadow:var(--shadow);
+
+  transition:.3s;
+}
+
+.date-card:hover,
+.ghibli-card:hover{
+
+  transform:
+  translateY(-5px)
+  scale(1.02);
+}
+
+.date-card img,
+.ghibli-card img{
+
+  width:100%;
+  border-radius:18px;
+
+  margin-bottom:15px;
+}
+
+.ghibli{
+
+  background:
+  linear-gradient(
+    135deg,
+    #fff7f3,
+    #f3f7ff
+  );
+}
+
+.ghibli-subtext{
+
+  text-align:center;
+  margin-top:10px;
+
+  opacity:0.8;
+}
+
+.secret-popup{
+
+  position:fixed;
+
+  bottom:30px;
+  left:50%;
+
+  transform:
+  translateX(-50%)
+  translateY(30px);
+
+  background:white;
+
+  padding:16px 24px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.15);
+
+  z-index:9999;
+
+  opacity:0;
+
+  transition:.5s;
+
+  max-width:320px;
+
+  text-align:center;
+}
+
+.secret-popup.show{
+
+  opacity:1;
+
+  transform:
+  translateX(-50%)
+  translateY(0);
+}
+
+
+/* NIGHT MODE */
+
+.night-mode .hero::after{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  rgba(10,10,30,0.35);
+
+  pointer-events:none;
+}
+
+/* ======================================
+   FOOTER (SEPARATE SECTION)
+====================================== */
+
+.love-footer{
+
+  margin-top:120px;
+
+  padding:80px 20px 50px;
+
+  text-align:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  /* THIS IS THE KEY FIX */
+  background:
+  linear-gradient(
+    135deg,
+    #1a1a2e,
+    #16213e
+  );
+
+  color:white;
+}
+
+/* FLOATING STARS */
+
+.footer-stars{
+
+  font-size:1.3rem;
+
+  margin-bottom:20px;
+
+  animation:
+  floatStars 4s ease-in-out infinite;
+}
+
+
+@keyframes floatStars{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* HEART */
+
+.footer-heart{
+
+  display:block;
+
+  font-size:3rem;
+
+  color:#ff6b9d;
+
+  margin-bottom:20px;
+
+  animation:
+  pulseHeart 2s infinite;
+}
+
+
+@keyframes pulseHeart{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.1);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+
+/* MAIN TEXT */
+
+.footer-text{
+
+  max-width:600px;
+
+  margin:0 auto;
+
+  line-height:1.8;
+
+  font-size:1rem;
+
+  opacity:0.85;
+}
+
+
+/* SIGNATURE */
+
+.footer-sig{
+
+  margin-top:30px;
+
+  font-size:1.2rem;
+
+  font-family:'Caveat',cursive;
+
+  color:#ff6b9d;
+}
+
+
+/* SECRET TEXT */
+
+.footer-secret{
+
+  margin-top:40px;
+
+  font-size:0.7rem;
+
+  letter-spacing:0.25em;
+
+  opacity:0.35;
+}
+
+.reset-btn{
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 12px 16px;
+
+  background: rgba(255,255,255,0.9);
+
+  border: none;
+  border-radius: 30px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  transition: 0.3s ease;
+
+}
+
+.reset-btn:hover{
+
+  transform: scale(1.05);
+
+  background: white;
+
+}
+

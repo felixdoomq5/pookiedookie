@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>For Someone Special ❤️</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+
+  <div id="loader">
+    <div class="loader-content">
+      <h1>Loading something special...</h1>
+      <div class="progress-bar">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING PARTICLES -->
+  <div class="floating-container"></div>
+
+  <!-- MUSIC BUTTON -->
+  <button id="musicToggle">A perfect song for a perfect girl 🎵</button>
+
+  <audio id="bgMusic" loop preload="auto">
+  <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <p class="subtitle">A tiny world made specially for T.I.N.Y</p>
+
+      <!-- Replace with her name -->
+      <h1>TINA</h1>
+
+      <button id="startJourney">
+        Unlock your pookie moments ❤️
+      </button>
+    </div>
+  </section>
+
+  <!-- QUESTIONNAIRE -->
+  <section class="questionnaire hidden">
+
+    <div class="section-title">
+      <h2>What should we unlock today?</h2>
+    </div>
+
+    <div id="questionCards" class="card-grid"></div>
+
+  </section>
+
+  <!-- MEMORY UNLOCKS -->
+  <section class="memories hidden">
+
+    <div class="section-title">
+      <h2>Unlocked Memories ✨</h2>
+    </div>
+
+    <div id="memoryContainer" class="memory-grid"></div>
+
+  </section>
+
+  <!-- MINI GAMES -->
+  <section class="games hidden">
+
+  <div class="section-title">
+    <h2>Mini Games 🎮</h2>
+    <h5>Complete all the games for hidden surprise 🎮</h5>
+  </div>
+
+  <div class="game-grid">
+
+    <!-- HEART GAME -->
+    <div class="game-card">
+
+      <h3>Find the Hidden Heart ❤️</h3>
+
+      <p>Find the secret heart hiding below.</p>
+
+      <div id="heartGameArea">
+
+        <span class="fake-heart">🤍</span>
+        <span class="fake-heart">🤍</span>
+        <span class="real-heart">❤️</span>
+        <span class="fake-heart">🤍</span>
+        <span class="fake-heart">🤍</span>
+
+      </div>
+
+    </div>
+    <!-- MEMORY MATCH -->
+    <div class="game-card">
+
+      <h3>Memory Match 🎴</h3>
+
+      <p>Click matching emojis.</p>
+
+      <div id="memoryGame">
+
+        <button onclick="matchCard(this,'🌙')">🌙</button>
+        <button onclick="matchCard(this,'❤️')">❤️</button>
+        <button onclick="matchCard(this,'🌙')">🌙</button>
+        <button onclick="matchCard(this,'✨')">✨</button>
+        <button onclick="matchCard(this,'❤️')">❤️</button>
+        <button onclick="matchCard(this,'✨')">✨</button>
+
+      </div>
+
+    </div>
+
+    <!-- PUZZLE -->
+    <div class="game-card">
+
+      <h3>Puzzle Unlock 🧩</h3>
+
+      <p>Click the button to unlock surprise.</p>
+
+      <button onclick="unlockPuzzle()">
+        Unlock Surprise
+      </button>
+
+      <div id="puzzleReward"></div>
+
+    </div>
+
+  </div>
+<!-- GAME REWARD AREA -->
+
+<div id="gameReward" class="reward-box hidden">
+
+  <img
+    id="rewardImage"
+    src="assets/images/polaroid-1.jpg"
+    alt="Memory"
+  >
+
+  <h3 id="rewardTitle">
+    Secret Unlocked ❤️
+  </h3>
+
+  <p id="rewardText">
+    Placeholder reward text
+  </p>
+
+</div>
+</section>
+<!-- DATE MEMORIES -->
+
+<section class="dates hidden">
+
+  <div class="section-title">
+    <h2>Our Little Dates 🌸</h2>
+  </div>
+
+  <div class="dates-grid">
+
+    <div class="date-card">
+
+      <img
+        src="assets/images/date-1.jpg"
+        alt="Date Memory"
+      >
+
+      <h3>Coffee Date ☕</h3>
+
+      <p>
+        Coffee and you feels the same, bitter harsh and grumpy but tastes goot with a lil sweet
+      </p>
+
+    </div>
+
+    <div class="date-card">
+
+      <img
+        src="assets/images/date-2.jpg"
+        alt="Date Memory"
+      >
+
+      <h3> The usual same menu</h3>
+
+      <p>
+        Well sometimes its better to play safe with things than to expeiment when you are hungry
+      </p>
+
+    </div>
+
+    <div class="date-card">
+
+      <img
+        src="assets/images/date-3.jpg"
+        alt="Date Memory"
+      >
+
+      <h3>Random Happy Day ✨</h3>
+
+      <p>
+        Tiny moments somehow became favorite memories like this.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GHIBLI SECRET SECTION -->
+
+<section id="ghibliSection" class="ghibli hidden">
+
+ <div class="section-title">
+  <h2>Secret Ghibli World 🎐</h2>
+</div>
+
+<p class="ghibli-subtext">
+  A tiny dreamy universe stitched together from little memories, soft moments, imaginary adventures, and the kind of happiness that feels too warm to explain properly. If life ever felt like a quiet Ghibli movie, I think it would look a little like this ✨🌸
+</p>
+
+<div class="ghibli-grid">
+
+  <div class="ghibli-card">
+
+    <img
+      src="assets/images/ghibli-1.jpg"
+      alt="Ghibli Memory"
+    >
+
+    <p>
+      Somehow even the quietest moments with you feel magical enough to belong inside a tiny animated world 🌙
+    </p>
+
+  </div>
+
+  <div class="ghibli-card">
+
+    <img
+      src="assets/images/ghibli-2.jpg"
+      alt="Ghibli Memory"
+    >
+
+    <p>
+      If comfort had a place, I think it would look like this  soft skies, warm lights, and you beside me ✨
+    </p>
+
+  </div>
+
+  <div class="ghibli-card">
+
+    <img
+      src="assets/images/ghibli-3.jpg"
+      alt="Ghibli Memory"
+    >
+
+    <p>
+      Some memories don’t feel real anymore. They feel more like scenes from a beautiful dream I never want to wake up from 🌸
+    </p>
+
+  </div>
+
+  <div class="ghibli-card">
+
+    <img
+      src="assets/images/ghibli-4.jpg"
+      alt="Ghibli Memory"
+    >
+
+    <p>
+      You somehow turned ordinary places into favorite memories just by existing in them with me 🎐
+    </p>
+
+  </div>
+
+  <div class="ghibli-card">
+
+    <img
+      src="assets/images/ghibli-5.jpg"
+      alt="Ghibli Memory"
+    >
+
+    <p>
+      Maybe this is why I like these little imaginary worlds so much  because they remind me of how soft and peaceful life feels around you ❤️
+    </p>
+
+  </div>
+
+</section>
+  <!-- LETTER SECTION -->
+  <section class="letter-section hidden">
+
+    <div class="letter-box">
+
+      <h2>A Letter For You</h2>
+
+      <p id="typewriterText"></p>
+
+      <button id="continueBtn">
+        Continue Reading
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery hidden">
+
+    <div class="section-title">
+      <h2>Little Fragments Of You 📸</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Replace with your own content -->
+      <div class="polaroid">
+        <img src="assets/images/polaroid-1.jpg">
+        <p>Replace with your memory caption</p>
+      </div>
+
+      <div class="polaroid">
+        <img src="assets/images/polaroid-2.jpg">
+        <p>Replace with another memory</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline hidden">
+
+    <div class="section-title">
+      <h2>Tiny Moments Timeline ⏳</h2>
+    </div>
+
+    <div class="timeline-container">
+
+      <div class="timeline-item">
+        <h3>First Memory</h3>
+        <p>Replace with your own milestone.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Funny Incident</h3>
+        <p>Replace with something wholesome.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL -->
+  <section class="final-section hidden">
+
+    <div class="final-content">
+      <p>
+        You'll probably never realize how many tiny things
+        about you became my favorite things.
+      </p>
+    </br>
+      <button onclick="location.reload()">
+        Replay Memories
+      </button>
+
+    </div>
+
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/questionnaire.js"></script>
+  <script src="js/games.js"></script>
+  <script src="js/eastereggs.js"></script>
+  <script src="js/gallery.js"></script>
+<!-- FOOTER -->
+<div class="footer-divider"></div>
+<footer class="love-footer">
+
+  <div class="footer-stars">
+    ✨ 🌙 ⭐
+  </div>
+
+  <span class="footer-heart">♥</span>
+
+  <p class="footer-text">
+    This tiny little world was made with love,
+    soft memories, and all the small things
+    that remind me of you.
+  </p>
+
+  <div class="footer-sig">
+    Most Welcome As Always ♡
+  </div>
+
+  <p class="footer-secret">
+    HOVER EVERYWHERE • SECRETS AWAIT • MADE WITH LOVE
+  </p>
+
+</footer>
+
+</body>
+</html>
